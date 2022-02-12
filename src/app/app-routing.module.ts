@@ -6,7 +6,6 @@ import { BooklistmemberComponent } from './books/booklistmember/booklistmember.c
 import { CustomerComponent } from './customers/customer/customer.component';
 import { CustomerlistComponent } from './customers/customerlist/customerlist.component';
 import { LoginComponent } from './login/login.component';
-import { RentalComponent } from './rentals/rental/rental.component';
 import { RentallistComponent } from './rentals/rentallist/rentallist.component';
 import { ReportComponent } from './report/report.component';
 import { AuthGuard } from './shared/auth.guard';
@@ -22,8 +21,6 @@ const routes: Routes = [
   {path:'booklistadmin', component:BooklistadminComponent,canActivate:[AuthGuard],data:{role : 1}},
   {path:'booklistmember', component:BooklistmemberComponent,canActivate:[AuthGuard],data:{role : 2}},
   {path:'report', component:ReportComponent},
-  {path:'rental', component:RentalComponent,canActivate:[AuthGuard],data:{role : 1}},
-  {path:'rental/:rId', component:RentalComponent},
   {path:'rentallist', component:RentallistComponent,canActivate:[AuthGuard],data:{role : 1}}
 ];
 

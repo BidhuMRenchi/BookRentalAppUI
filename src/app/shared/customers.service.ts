@@ -23,7 +23,7 @@ export class CustomersService {
   genres1:Genres[];
   formData2 : Genres = new Genres();
 
-  Rentals:Rentals[];
+  rentals:Rentals[];
   formData3 : Rentals = new Rentals();
 
   roles:Roles[];
@@ -120,30 +120,30 @@ export class CustomersService {
 
   //Retrieval
   bindListRentals(){
-    this.httpClient.get(environment.apiUrl+"/api/books/renntals")
+    this.httpClient.get(environment.apiUrl+"/api/books/rentals")
     .toPromise().then(
       response=>{
         console.log("From Service");
         console.log(response);
-        this.customers=response as Customers[];
+        this.rentals=response as Rentals[];
       }
     );
   }
 
   insertRentals(user:Rentals):Observable<any>{
-    return this.httpClient.post(environment.apiUrl+"/api/books/renntals",user);
+    return this.httpClient.post(environment.apiUrl+"/api/books/rentals",user);
   }
 
   updateRentals(user:Rentals):Observable<any>{
-    return this.httpClient.put(environment.apiUrl+"/api/books/renntals",user);
+    return this.httpClient.put(environment.apiUrl+"/api/books/rentals",user);
   }
 
   deleteRentals(id : number){
-    return this.httpClient.delete(environment.apiUrl+"/api/books/renntals/"+id);
+    return this.httpClient.delete(environment.apiUrl+"/api/books/rentals/"+id);
   }
 
 
-  // ----------------REPORTS--------
+  // ----------------REPORTS------------------
 
   //Most Expensive Books
   getMEB(){

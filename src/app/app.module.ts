@@ -13,7 +13,6 @@ import { BooklistmemberComponent } from './books/booklistmember/booklistmember.c
 import { LoginComponent } from './login/login.component';
 import { ReportComponent } from './report/report.component';
 import { RentalsComponent } from './rentals/rentals.component';
-import { RentalComponent } from './rentals/rental/rental.component';
 import { RentallistComponent } from './rentals/rentallist/rentallist.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -37,7 +36,6 @@ import { AuthInterceptor } from './shared/auth.interceptor';
     LoginComponent,
     ReportComponent,
     RentalsComponent,
-    RentalComponent,
     RentallistComponent
   ],
   imports: [
