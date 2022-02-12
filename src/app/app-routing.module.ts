@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'book', component:BookComponent,canActivate:[AuthGuard],data:{role : 1}},
   {path:'book/:bId', component:BookComponent},
   {path:'booklistadmin', component:BooklistadminComponent,canActivate:[AuthGuard],data:{role : 1}},
-  {path:'booklistmember', component:BooklistmemberComponent,canActivate:[AuthGuard],data:{role : 2}},
+  {path:'booklistmember', component:BooklistmemberComponent},
   {path:'report', component:ReportComponent},
   {path:'rentallist', component:RentallistComponent,canActivate:[AuthGuard],data:{role : 1}}
 ];

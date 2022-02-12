@@ -30,6 +30,10 @@ export class CustomerlistComponent implements OnInit {
     this.router.navigate(['customer',cId])
   }
 
+  addCustomer(){
+    this.router.navigate(['customer']);
+  }
+
   //Delete User
   deleteUser(cId : number){
     console.log("Deleting : "+cId);
