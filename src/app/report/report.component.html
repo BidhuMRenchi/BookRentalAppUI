@@ -1,0 +1,31 @@
+<h3 style="text-align: center;color: rgb(22, 136, 136);font-size: 1.5em;background-color: aliceblue;padding-top: 5px;padding-bottom:5px;margin: 0%;">REPORT-ANALYSIS</h3>
+
+<div style="color: rgb(22, 136, 136);">
+    <h4 style="color: rgb(22, 136, 136);">REPORT 1</h4>
+    <p style="color: rgb(22, 136, 136);font-size: 1.5em;"> Expensive Books IN Each Category ? </p>
+    <p *ngFor="let item of userService.genres1" style="color: rgb(22, 136, 136);"> 
+    
+            Genre : {{item.Genre}} 
+            <br>
+            Book  
+            &nbsp;: {{item.BookName}} 
+            <br>
+            Price  
+            &nbsp;: {{item.Price}} 
+
+    </p>
+</div>
+<br>
+<div>
+    <h4 style="color: rgb(22, 136, 136);">REPORT 2</h4>   
+    <p style="color: rgb(22, 136, 136);font-size: 1.5em;">Books in each category ? </p>    
+    <p *ngFor="let item of userService.books" style="color: rgb(22, 136, 136);"> 
+    
+        Genre : {{item.Genre}} 
+        <br>
+        Book  
+        &nbsp;: {{item.BName}} 
+        
+    </p>
+
+</div>

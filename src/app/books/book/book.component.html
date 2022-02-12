@@ -1,0 +1,107 @@
+<!-- Template driven form -->
+<form name="userform" #form="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form)">
+
+    <!-- Book Id (Hidden)-->
+    <input type = "hidden" name="BId" [(ngModel)]="userService.formData1.BId">
+
+    <!-- Book Name -->
+    <div class="form-group">
+        <label>  Book Name : </label>
+        <input type="text" name="BName"
+        #BName="ngModel"
+        [(ngModel)]="userService.formData1.BName"
+        class="form-control"
+        placeholder="Enter Book Name"
+        required minlength="3"
+        [ngClass]="{'is-invalid':BName.touched && BName.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="BName.touched && BName.invalid">
+            <div *ngIf="BName.errors.required">
+                Book Name is required
+            </div>
+        </div>
+    </div>
+
+    <!-- Author -->
+    <div class="form-group">
+        <label>  Author : </label>
+        <input type="text" name="Author"
+        #Author="ngModel"
+        [(ngModel)]="userService.formData1.Author"
+        class="form-control"
+        placeholder="Enter Author Name"
+        required minlength="3"
+        [ngClass]="{'is-invalid':Author.touched && Author.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="Author.touched && Author.invalid">
+            <div *ngIf="Author.errors.required">
+                Author is required
+            </div>
+        </div>
+    </div>
+
+    <!-- GenreID dropdown -->
+    <div class="form-group">
+        <label>  Genre : </label>
+        <select name="GenreId" id="GenreId"
+            class="form-control"
+            #GenreId="ngModel"
+            required
+            [(ngModel)]="userService.formData2.GenreId">
+            <option value=0 disabled>Select GenreID</option>
+            <option *ngFor="let Genre of userService.genres" 
+            value="{{Genre.GenreId}}">{{Genre.GName}}</option>
+        </select>       
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="GenreId.touched && GenreId.invalid">
+            <div *ngIf="GenreId.errors.required">
+                GenreID is required
+            </div>
+        </div>
+    </div>
+
+    <!-- Publication -->
+    <div class="form-group">
+        <label>  Publication : </label>
+        <input type="text" name="Publication"
+        #Publication="ngModel"
+        [(ngModel)]="userService.formData1.Publication"
+        class="form-control"
+        placeholder="Enter Publication"
+        required minlength="3"
+        [ngClass]="{'is-invalid':Publication.touched && Publication.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="Publication.touched && Publication.invalid">
+            <div *ngIf="Publication.errors.required">
+                Publication is required
+            </div>
+        </div>
+    </div>   
+
+    <!-- Price -->
+    <div class="form-group">
+        <label>  Price : </label>
+        <input type="number" name="Price"
+        #Price="ngModel"
+        [(ngModel)]="userService.formData1.Price"
+        class="form-control"
+        placeholder="Enter Price"
+        required minlength="3"
+        [ngClass]="{'is-invalid':Price.touched && Price.invalid}"/>
+        <!-- Validation -->
+        <div class="validation-error" *ngIf="Price.touched && Price.invalid">
+            <div *ngIf="Price.errors.required">
+                Price is required
+            </div>
+        </div>
+    </div>
+
+    <!-- submit -->
+    <br>
+    <div class="form-group">
+        <button type="form-group"
+        class="btn btn-lg btn-primary form-control"
+        [disabled]="!(form.valid && form.dirty)"
+        >Submit</button>
+    </div>
+</form>
